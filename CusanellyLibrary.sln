@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CusanellyLibrary", "CusanellyLibrary\CusanellyLibrary.csproj", "{23169C1E-DD89-40CE-9847-AF9C15710E72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CusanellyLibrary", "CusanellyLibrary\CusanellyLibrary.csproj", "{23169C1E-DD89-40CE-9847-AF9C15710E72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComprehendLibrary", "ComprehendLibrary\ComprehendLibrary.csproj", "{703979E1-1A5B-4B7D-83CC-1237D9FECEFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamoDBLibrary", "DynamoDBLibrary\DynamoDBLibrary.csproj", "{36F6774E-C641-46A2-A047-E0BB6CCC59FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RekognitionLibrary", "RekognitionLibrary\RekognitionLibrary.csproj", "{FF275C15-FB2D-4140-AC4B-C0E57A24183B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureCognitiveLibrary", "AzureCognitiveLibrary\AzureCognitiveLibrary.csproj", "{925D5744-8638-4411-9652-C5741997C3C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendGridLibrary", "..\MinersMonitoring\SendGridLibrary\SendGridLibrary.csproj", "{4D21E355-8127-42D5-9A05-B37C27E22B4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SESLibrary", "..\CloudManager\SESLibrary\SESLibrary.csproj", "{AE6BDB5A-105B-4145-B74C-C37F8480DA4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +27,30 @@ Global
 		{23169C1E-DD89-40CE-9847-AF9C15710E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23169C1E-DD89-40CE-9847-AF9C15710E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23169C1E-DD89-40CE-9847-AF9C15710E72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{703979E1-1A5B-4B7D-83CC-1237D9FECEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703979E1-1A5B-4B7D-83CC-1237D9FECEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703979E1-1A5B-4B7D-83CC-1237D9FECEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703979E1-1A5B-4B7D-83CC-1237D9FECEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F6774E-C641-46A2-A047-E0BB6CCC59FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F6774E-C641-46A2-A047-E0BB6CCC59FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F6774E-C641-46A2-A047-E0BB6CCC59FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F6774E-C641-46A2-A047-E0BB6CCC59FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF275C15-FB2D-4140-AC4B-C0E57A24183B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF275C15-FB2D-4140-AC4B-C0E57A24183B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF275C15-FB2D-4140-AC4B-C0E57A24183B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF275C15-FB2D-4140-AC4B-C0E57A24183B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{925D5744-8638-4411-9652-C5741997C3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{925D5744-8638-4411-9652-C5741997C3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{925D5744-8638-4411-9652-C5741997C3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{925D5744-8638-4411-9652-C5741997C3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D21E355-8127-42D5-9A05-B37C27E22B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D21E355-8127-42D5-9A05-B37C27E22B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D21E355-8127-42D5-9A05-B37C27E22B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D21E355-8127-42D5-9A05-B37C27E22B4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE6BDB5A-105B-4145-B74C-C37F8480DA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6BDB5A-105B-4145-B74C-C37F8480DA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6BDB5A-105B-4145-B74C-C37F8480DA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6BDB5A-105B-4145-B74C-C37F8480DA4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
