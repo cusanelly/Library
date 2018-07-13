@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RekognitionLibrary", "Rekog
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureCognitiveLibrary", "AzureCognitiveLibrary\AzureCognitiveLibrary.csproj", "{925D5744-8638-4411-9652-C5741997C3C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendGridLibrary", "..\MinersMonitoring\SendGridLibrary\SendGridLibrary.csproj", "{4D21E355-8127-42D5-9A05-B37C27E22B4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CognitoLibrary", "CognitoLibrary\CognitoLibrary.csproj", "{26E838BF-C38C-46A3-A3A1-189581420B23}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SESLibrary", "..\CloudManager\SESLibrary\SESLibrary.csproj", "{AE6BDB5A-105B-4145-B74C-C37F8480DA4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendGridLibrary", "SendGridLibrary\SendGridLibrary.csproj", "{F3712B9C-823B-4CF1-90BA-BF4189F58E01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CognitoLibrary", "CognitoLibrary\CognitoLibrary.csproj", "{26E838BF-C38C-46A3-A3A1-189581420B23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SESLibrary", "SESLibrary\SESLibrary.csproj", "{B71F5CFA-7A8D-4DE3-A76D-A9AA0568CA55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,18 +45,18 @@ Global
 		{925D5744-8638-4411-9652-C5741997C3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{925D5744-8638-4411-9652-C5741997C3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{925D5744-8638-4411-9652-C5741997C3C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D21E355-8127-42D5-9A05-B37C27E22B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D21E355-8127-42D5-9A05-B37C27E22B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D21E355-8127-42D5-9A05-B37C27E22B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D21E355-8127-42D5-9A05-B37C27E22B4A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE6BDB5A-105B-4145-B74C-C37F8480DA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE6BDB5A-105B-4145-B74C-C37F8480DA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE6BDB5A-105B-4145-B74C-C37F8480DA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE6BDB5A-105B-4145-B74C-C37F8480DA4F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{26E838BF-C38C-46A3-A3A1-189581420B23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{26E838BF-C38C-46A3-A3A1-189581420B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26E838BF-C38C-46A3-A3A1-189581420B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26E838BF-C38C-46A3-A3A1-189581420B23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3712B9C-823B-4CF1-90BA-BF4189F58E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3712B9C-823B-4CF1-90BA-BF4189F58E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3712B9C-823B-4CF1-90BA-BF4189F58E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3712B9C-823B-4CF1-90BA-BF4189F58E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B71F5CFA-7A8D-4DE3-A76D-A9AA0568CA55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B71F5CFA-7A8D-4DE3-A76D-A9AA0568CA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B71F5CFA-7A8D-4DE3-A76D-A9AA0568CA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B71F5CFA-7A8D-4DE3-A76D-A9AA0568CA55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

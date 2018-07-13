@@ -149,12 +149,14 @@ namespace SESLibrary
         public async Task<SendTemplatedEmailResponse> SendTemplate(string templatename, 
             string name, 
             string url, 
-            List<string> to)
+            List<string> to,
+            string arn,
+            string sourceemail)
         {
             _sendtemplaterequest = new SendTemplatedEmailRequest()
             {
-                SourceArn = "arn:aws:ses:us-east-1:775734958315:identity/no-reply@whata.tv",
-                Source = "no-reply@whata.tv",
+                SourceArn = arn,
+                Source = sourceemail,
                 Template = templatename,
                 TemplateData = $"{{ \"username\":\"{name}\", \"urlinfo\": \"{url}\" }}",
                 Destination = new Destination
