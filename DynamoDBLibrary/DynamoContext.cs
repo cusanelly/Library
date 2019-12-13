@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using Amazon.DynamoDBv2.DocumentModel;
-using System.Globalization;
 using Amazon;
 
 namespace DynamoDBLibrary
@@ -14,7 +13,7 @@ namespace DynamoDBLibrary
     public interface IDynamoContext
     {
         Task CheckTable(string tablename);
-        Task<Document> Insert(string tablename, string dataoriginal, string dataresult);
+        Task<Document> Insert(string tablename, string dataoriginal, string dataresult, Dictionary<string, DynamoDBEntry> values = null);
     }
     public class DynamoContext : IDynamoContext
     {
@@ -92,7 +91,7 @@ namespace DynamoDBLibrary
             }
         }
 
-        public async Task<Document> Insert(string tablename, string dataoriginal, string dataresult)
+        public async Task<Document> Insert(string tablename, string dataoriginal, string dataresult, Dictionary<string,DynamoDBEntry> values = null)
         {
             Table table = Table.LoadTable(_DynamoClient, tablename);
             var data = new Document();

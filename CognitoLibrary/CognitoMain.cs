@@ -1,6 +1,7 @@
 ﻿using Amazon;
 using Amazon.CognitoIdentityProvider;
 using Amazon.CognitoIdentityProvider.Model;
+using Amazon.Extensions.CognitoAuthentication;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ namespace CognitoLibrary
         private string _AccessKey { get; set; }
         private string _AccessSecret { get; set; }
         private RegionEndpoint _Region { get; set; }
-        private AmazonCognitoIdentityProviderClient _Client { get; set; }
+        private AmazonCognitoIdentityProviderClient _Client { get; set; }  
+        
 
         public CognitoMain()
         {
@@ -30,7 +32,7 @@ namespace CognitoLibrary
             _Client = new AmazonCognitoIdentityProviderClient(_AccessKey, _AccessSecret, _Region);
         }
 
-        public async Task<SignUpResponse> SignIn(string username, string password)
+        public async Task<SignUpResponse> SignUp(string username, string password)
         {
             var request = new SignUpRequest
             {
@@ -39,6 +41,9 @@ namespace CognitoLibrary
             };
             var response = await _Client.SignUpAsync(request);
             return (response.HttpStatusCode.Equals(HttpStatusCode.OK)) ? response : null;
+        }
+        public async Task SignIn(CognitoUser user, string password) {
+            
         }
     }
 }
