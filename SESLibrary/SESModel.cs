@@ -13,7 +13,7 @@ namespace SESLibrary
         Task<List<TemplateMetadata>> ListTemplates();
         Task<Template> GetTemplate(string templatename);
         Task<bool> DeleteTemplate(string templatename);
-        Task SendEmail(string from, string to, string subject, string body, List<string> cc = null);
+        Task<SendEmailResponse> SendEmail(string from, string to, string subject, string body, List<string> cc = null);
     }
     public class SESModel : ISESModel, IDisposable
     {
@@ -29,6 +29,11 @@ namespace SESLibrary
         private SendTemplatedEmailRequest _sendtemplaterequest;
         private SendTemplatedEmailResponse _sendtemplateresponse;
 
+        public SESModel(string Region)
+        {
+            RegionEndpoint region = RegionEndpoint.GetBySystemName(Region);
+            _Client = new AmazonSimpleEmailServiceClient(region);
+        }
         public SESModel(string ClientKey, string ClientSecret, string Region)
         {
             RegionEndpoint region = RegionEndpoint.GetBySystemName(Region);
@@ -125,7 +130,7 @@ namespace SESLibrary
             //throw new NotImplementedException();
         }     
 
-        public async Task SendEmail(string from, 
+        public async Task<SendEmailResponse> SendEmail(string from, 
             string to, 
             string subject, 
             string body, 
@@ -139,12 +144,12 @@ namespace SESLibrary
                 }
             };
             var destination = new Destination { ToAddresses = new List<string> { to } };
-            if (cc.Count > 0)
+            if (cc != null && cc.Count > 0)
             {
                 destination.CcAddresses = cc;
             }
             request.Destination = destination;
-            await _Client.SendEmailAsync(request);            
+            return await _Client.SendEmailAsync(request);
         }
         public async Task<SendTemplatedEmailResponse> SendTemplate(string templatename, 
             string name, 
