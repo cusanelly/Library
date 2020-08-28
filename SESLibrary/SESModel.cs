@@ -14,6 +14,12 @@ namespace SESLibrary
         Task<Template> GetTemplate(string templatename);
         Task<bool> DeleteTemplate(string templatename);
         Task<SendEmailResponse> SendEmail(string from, string to, string subject, string body, List<string> cc = null);
+        Task<SendTemplatedEmailResponse> SendTemplate(string templatename,
+            List<string> to, string from, string jsontempvariables);
+        Task<SendTemplatedEmailResponse> SendTemplate(string templatename,
+            List<string> to, List<string> cc, List<string> bcc,
+            string from, string jsontempvariables);
+        
     }
     public class SESModel : ISESModel, IDisposable
     {
@@ -28,6 +34,7 @@ namespace SESLibrary
         private DeleteTemplateResponse _deletetempresponse;       
         private SendTemplatedEmailRequest _sendtemplaterequest;
         private SendTemplatedEmailResponse _sendtemplateresponse;
+
 
         public SESModel() {
             _Client = new AmazonSimpleEmailServiceClient();
@@ -154,22 +161,26 @@ namespace SESLibrary
             request.Destination = destination;
             return await _Client.SendEmailAsync(request);
         }
-        public async Task<SendTemplatedEmailResponse> SendTemplate(string templatename, 
-            string name, 
-            string url, 
-            List<string> to,
-            string arn,
-            string sourceemail)
+        public async Task<SendTemplatedEmailResponse> SendTemplate(string templatename,
+            List<string> to,string from, string jsontempvariables)
+        {
+            List<string> empty = new List<string>();
+            return await SendTemplate(templatename, to, empty, empty, from,jsontempvariables );
+        }
+            public async Task<SendTemplatedEmailResponse> SendTemplate(string templatename,            
+            List<string> to,List<string> cc, List<string>bcc,            
+            string from, string jsontempvariables)
         {
             _sendtemplaterequest = new SendTemplatedEmailRequest()
-            {
-                SourceArn = arn,
-                Source = sourceemail,
+            {                
+                Source = from,
                 Template = templatename,
-                TemplateData = $"{{ \"username\":\"{name}\", \"urlinfo\": \"{url}\" }}",
+                TemplateData = jsontempvariables,
                 Destination = new Destination
                 {
-                    ToAddresses = to
+                    ToAddresses = to,
+                    CcAddresses = cc,
+                    BccAddresses = bcc
                 }
             };            
             try
@@ -181,6 +192,10 @@ namespace SESLibrary
                 Console.WriteLine($"Data: {ex.Data}");
                 Console.WriteLine($"Source: {ex.Source}");
                 Console.WriteLine($"Message: {ex.Message}");
+                _sendtemplateresponse = new SendTemplatedEmailResponse {
+                    HttpStatusCode = System.Net.HttpStatusCode.NoContent,
+                    MessageId = ex.Message                    
+                };
             }
 
             return _sendtemplateresponse;
