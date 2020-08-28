@@ -29,6 +29,9 @@ namespace SESLibrary
         private SendTemplatedEmailRequest _sendtemplaterequest;
         private SendTemplatedEmailResponse _sendtemplateresponse;
 
+        public SESModel() {
+            _Client = new AmazonSimpleEmailServiceClient();
+        }
         public SESModel(string Region)
         {
             RegionEndpoint region = RegionEndpoint.GetBySystemName(Region);
