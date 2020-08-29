@@ -1,4 +1,5 @@
 ﻿using Amazon;
+using Amazon.Runtime.Internal.Util;
 using Amazon.SimpleEmail;
 using Amazon.SimpleEmail.Model;
 using System;
@@ -61,9 +62,8 @@ namespace SESLibrary
             ListIdentitiesRequest req = new ListIdentitiesRequest{
                 IdentityType = IdentityType.EmailAddress                
             };
-            var res = await _Client.ListIdentitiesAsync(req);
-            
-            var response = await _Client.VerifyEmailIdentityAsync(request);           
+            var res = await _Client.ListIdentitiesAsync(req);            
+            await _Client.VerifyEmailIdentityAsync(request);           
         }
         public async Task<bool> CreateTemplate(string templatename, string subject, string body, string html)
         {
@@ -111,7 +111,13 @@ namespace SESLibrary
         {
             Template template = new Template();
             _gettemprequest = new GetTemplateRequest() { TemplateName = templatename };
-            _gettempresponse = await _Client.GetTemplateAsync(_gettemprequest);
+            try
+            {
+                _gettempresponse = await _Client.GetTemplateAsync(_gettemprequest);
+            }
+            catch (TemplateDoesNotExistException ex) {               
+                return null;
+            }
             if (_gettempresponse.HttpStatusCode.ToString() == "OK" && _gettempresponse.Template != null)
             {
                 template = _gettempresponse.Template;
