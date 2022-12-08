@@ -14,7 +14,7 @@
     <PackageReference Include="AWSSDK.SimpleEmail" Version="3.3.6.8" />
     <PackageReference Include="Microsoft.Azure.CognitiveServices.Language" Version="1.0.0-preview" />
     <PackageReference Include="Microsoft.Azure.CognitiveServices.Vision.ComputerVision" Version="1.1.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Sendgrid" Version="9.9.0" />
   </ItemGroup>
 
